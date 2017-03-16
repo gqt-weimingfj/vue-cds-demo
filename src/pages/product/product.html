@@ -1,0 +1,26 @@
+<div id="product">
+	<table>
+		<thead>
+			<tr>
+				<th><input type="checkbox" v-model="allCheck" @change="checkAll"></th>
+				<th>名称</th>
+				<th>价格</th>
+				<th>id</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="(item,index) in list">
+				<td><input type="checkbox" v-model="item.check"
+					@click="checkItem(item)"></td>
+				<td>{{item.name}}</td>
+				<td>{{item.price}}</td>
+				<td>{{item.id}}</td>
+				<td>
+					<button @click="deleteItem(index)">删除</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<button @click="deleteCheck">删除</button>
+</div>
